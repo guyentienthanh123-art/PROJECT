@@ -27,31 +27,6 @@
 
 🎨 GlassmorphismによるモダンUI、レスポンシブ対応
 
-🏗️ システム構成図
-flowchart LR
-  U[ユーザー（ブラウザ）] -->|HTTP/HTTPS| FE[フロントエンド\nHTML/CSS/JavaScript]
-  FE -->|Fetch API| BE[バックエンド\nPHP（CRUD/セッション）]
-  BE -->|SQL| DB[(データベース\nMySQL / SQLite)]
-
-🗄️ ER図
-erDiagram
-  USERS ||--o{ ITEMS : has
-  USERS {
-    int id PK
-    varchar username
-    varchar password_hash
-    datetime created_at
-  }
-  ITEMS {
-    int id PK
-    int user_id FK
-    enum type "vocabulary|grammar|kanji"
-    text jp_text
-    text meaning
-    text example
-    enum level "studying|learned|forgotten"
-    datetime created_at
-  }
 
 ⚙️ セットアップ & 実行方法
 必要環境
@@ -66,7 +41,7 @@ cd PROJECT
 
 データベース設定
 
-db_schema.sql をインポート
+database.sql をインポート
 
 db_connect.php を環境に合わせて編集
 
@@ -84,16 +59,13 @@ Apache/MySQL を起動
 
 UI/UX設計：学習効率を意識した情報設計・検索/フィルタ導線
 
-DB設計：ER図によるスキーマ設計とデータ整合性
-
-開発プロセス：要件定義 → 設計 → 実装 → テスト → デプロイ
 
 担当範囲：本プロジェクトは個人開発として、設計・実装・テストのすべてを担当。
 👉 この経験を活かし、御社の実務で価値を出しながら成長していきたいと考えています。
 
 🙋 開発者情報
 
-👤 グエン・ティエン・タイン – 日本電子専門学校 情報システム開発科
+👤 グエン・ティエン・タン – 日本電子専門学校 情報システム開発科
 
 📧 Email: 24jy0209@jec.ac.jp
 
